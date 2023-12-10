@@ -6,33 +6,22 @@ public class BankingCashCounter {
     static int cash = 1000;
     static Queue<Character> q;
     public static void main(String[] args) {
+        takeInput();
         transaction();
         System.out.println("Remaining Cash: "+cash);
     }
-    public static void transaction() {
+    public static void takeInput() {
         q = new LinkedList<>();
         Scanner sc = new Scanner(System.in);
         while (true){
-            System.out.println("Add persons for withdrawal or deposit of cash.Enter W for withdraw,D for deposit");
+            System.out.println("Add persons.Enter W for withdraw,D for deposit,any other character to exit");
             char ch = sc.next().charAt(0);
             switch(ch){
                 case 'W':
-                    System.out.println("Enter amount to withdraw: ");
-                    int amt = sc.nextInt();
-                    if (cash - amt > 0){
-                        cash -= amt;
-                        System.out.println("Remaining Cash after withdraw : "+cash);
-                    }
-                    else {
-                        System.out.println("No cash");
-                        break;
-                    }
+                    q.add('W');
                     break;
                 case 'D':
-                    System.out.println("Enter amount to deposit: ");
-                    int amt2 = sc.nextInt();
-                    cash += amt2;
-                    System.out.println("Remaining Cash after deposit : "+cash);
+                    q.add('D');
                     break;
                 default:
                     System.out.println("Invalid choice. Exit!!");
@@ -41,12 +30,15 @@ public class BankingCashCounter {
         }
     }
 
-    public static void transaction(Queue<Character> q){
+    public static void transaction(){
+        Scanner sc = new Scanner(System.in);
         while (!q.isEmpty()){
             if (q.peek().equals('W')){
-                if (cash - 50 > 0){
-                    cash -= 50;
-                    System.out.println("Withdraw amount Cash : "+cash);
+                System.out.println("Enter amount to withdraw: ");
+                int amt = sc.nextInt();
+                if (cash - amt > 0){
+                    cash -= amt;
+                    System.out.println("Remaining Cash after withdraw : "+cash);
                 }
                 else {
                     System.out.println("No cash");
@@ -54,8 +46,10 @@ public class BankingCashCounter {
                 }
             }
             else {
-                cash += 50;
-                System.out.println("Deposit amount Cash : "+cash);
+                System.out.println("Enter amount to deposit: ");
+                int amt2 = sc.nextInt();
+                cash += amt2;
+                System.out.println("Remaining Cash after deposit : "+cash);
             }
             q.poll();
         }
