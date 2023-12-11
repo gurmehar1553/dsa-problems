@@ -10,6 +10,12 @@ public class BankingCashCounter {
         transaction();
         System.out.println("Remaining Cash: "+cash);
     }
+
+    /**
+     * Take user's input
+     * of persons who withdraw or deposit cash
+     * store them in queue
+     */
     public static void takeInput() {
         q = new LinkedList<>();
         Scanner sc = new Scanner(System.in);
@@ -30,6 +36,10 @@ public class BankingCashCounter {
         }
     }
 
+    /**
+     * Perform transactions
+     * on user's choice
+     */
     public static void transaction(){
         Scanner sc = new Scanner(System.in);
         while (!q.isEmpty()){

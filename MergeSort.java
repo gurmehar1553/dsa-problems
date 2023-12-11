@@ -17,6 +17,13 @@ public class MergeSort {
         mergeArrays(arr,low,mid,high);
     }
 
+    /**
+     * Merge 2 sorted arrays
+     * @param arr
+     * @param low
+     * @param mid
+     * @param high
+     */
     public static void mergeArrays(String[] arr, int low, int mid, int high) {
         String[] arr1 = new String[mid-low+1];
         String[] arr2 = new String[high-mid];

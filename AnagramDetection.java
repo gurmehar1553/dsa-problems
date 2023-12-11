@@ -1,7 +1,11 @@
+import java.util.Scanner;
+
 public class AnagramDetection {
     public static void main(String[] args) {
-        String s1 = "earth";
-        String s2 = "heart";
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter 2 strings: ");
+        String s1 = scanner.next();
+        String s2 = scanner.next();
         boolean ans = checkAnagram(s1,s2);
         if (ans){
             System.out.println("Two strings are anagram");
@@ -11,6 +15,12 @@ public class AnagramDetection {
         }
     }
 
+    /**
+     *
+     * Created frequency array to
+     * maintain count of characters
+     *
+     */
     public static boolean checkAnagram(String s1, String s2) {
         int[] freq = new int[26];
         for (int i=0;i<s1.length();i++){

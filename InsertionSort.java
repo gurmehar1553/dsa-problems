@@ -7,6 +7,11 @@ public class InsertionSort {
             System.out.print(arr[i]+" ");
         }
     }
+
+    /**
+     * Insertion sort algo
+     * @param arr
+     */
     public static void insertionSort(String[] arr){
         for(int i=0;i<arr.length;i++){
             String ele = arr[i];

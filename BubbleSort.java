@@ -6,6 +6,11 @@ public class BubbleSort {
             System.out.print(arr[i]+" ");
         }
     }
+
+    /**
+     * Bubble sort algo
+     * @param arr
+     */
     public static void bubbleSort(int[] arr) {
         int n = arr.length;
         for(int i=0;i<n;i++){

@@ -1,8 +1,11 @@
+import java.util.Scanner;
 import java.util.Stack;
 
 public class BalancedParenthesis {
     public static void main(String[] args) {
-        String exp = "(5+6)∗(7+8)/(4+3)(5+6)∗((7+8)/(4+3))";
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter arithmetic expression ");
+        String exp = scanner.next();
         if (checkBal(exp)){
             System.out.println("Arithmetic Expression is balanced");
         }
@@ -11,6 +14,10 @@ public class BalancedParenthesis {
         }
     }
 
+    /**
+     * Used Stack to check
+     * balanced or not
+     */
     public static boolean checkBal(String exp) {
         Stack<Character> st = new Stack<>();
         for (int i=0;i<exp.length();i++){

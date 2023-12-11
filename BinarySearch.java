@@ -12,6 +12,14 @@ public class BinarySearch {
         int low = 0,high = 100;
         System.out.println("Got the ans:"+ recursiveBS(n,low,high));
     }
+
+    /**
+     *
+     * @param n
+     * @param low
+     * @param high
+     * @return
+     */
     private static int recursiveBS(int n, int low, int high) {
         int mid = (low+high)/2;
         System.out.print(mid+" , ");

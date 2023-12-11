@@ -14,6 +14,10 @@ public class PermutationOfString {
         }
         System.out.println("True");
     }
+    /**
+     * Iterative method to find
+     * permutations of string
+     */
     public static ArrayList<StringBuilder> solvePermutationIterative(String str){
         ArrayList<StringBuilder> arr = new ArrayList<>();
         int n = str.length();
@@ -30,6 +34,10 @@ public class PermutationOfString {
         }
         return arr;
     }
+    /**
+     * Recursive method to find
+     * permutations of string
+     */
     public static void solvePermutationRecursive(String str,int i,int j,int n,ArrayList<StringBuilder> arr){
         if (j==n){
             i=i+1;
@@ -41,7 +49,10 @@ public class PermutationOfString {
         arr.add(swap(i,j,str));
         solvePermutationRecursive(str,i,j+1,n,arr);
     }
-
+    /**
+     * Swap 2 characters of string
+     * using string builder
+     */
     public static StringBuilder swap(int i, int j, String str) {
         StringBuilder ans = new StringBuilder();
         for (int k=0;k<str.length();k++){
